@@ -1,0 +1,9 @@
+int32 askcmd
+---
+string frame_id
+int32 width 
+int32 height
+float32 resolution
+float32 originx
+float32 originy
+int8[] mapdata

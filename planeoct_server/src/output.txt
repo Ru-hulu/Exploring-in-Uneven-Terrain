@@ -1,0 +1,13 @@
+NAME : vp6.78.tour
+COMMENT : Length = 78
+COMMENT : Found by LKH [Keld Helsgaun] Wed Jan 10 21:12:37 2024
+TYPE : TOUR
+DIMENSION : 5
+TOUR_SECTION
+1
+5
+4
+3
+2
+-1
+EOF

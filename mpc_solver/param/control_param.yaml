@@ -1,0 +1,10 @@
+mpc_param:
+  Np: 5
+  Nc: 4
+  delta_mpc_t: 0.1
+  max_v: 1.2
+  min_v: -1.2
+  max_w: 1.5
+  min_w: -1.5
+  temp_x: 1
+  temp_w: 1

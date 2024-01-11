@@ -1,0 +1,6 @@
+<launch>
+    <rosparam command="load" file="/home/r/Mysoftware/Paper_Expriment_Simulation/Wheel_uneven/src/planner_server/param/example.yaml" />
+	<node pkg="planner_server" type="planner_server" name="planner_server" output="screen">
+	</node>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d /home/r/Mysoftware/Paper_Expriment_Simulation/Wheel_uneven/src/planner_server/param/uneven.rviz" required="true" />
+</launch>

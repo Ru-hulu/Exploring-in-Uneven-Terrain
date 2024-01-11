@@ -1,0 +1,6 @@
+一帧深度图像的数据大概是450个25-25cm的格子，按照估计可以覆盖25x25的范围。
+subspace的尺度是20-20比较合适。
+local planning space 的尺寸为2-2subspace.
+
+
+

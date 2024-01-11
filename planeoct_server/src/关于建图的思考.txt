@@ -1,0 +1,60 @@
+地图小Patch的尺寸是25cm即可，不需要做半重叠处理。因为机器人尺寸本身很大，没有必要做精细化处理。后续处理留给轨迹规划来做。
+现在问题转换为，在给定梯形区域，如果根据小正方形找到在图像中的像素索引。
+
+1、将深度图像区域进行划分，计算每一个区域的法向量,没有降采样的情况下,耗时大概一帧50ms
+2、将深度图像区域进行划分，采样计算每一个区域的法向量，如果不可穿行则放弃，可穿行则进一步采样。
+3、将投影点云进行采样，做qhull,将qhull做一个merge的操作
+
+frontier_set
+new_node_set
+check_set
+for(p in pointset)
+{
+    thisv =find_vox(p); 
+    
+    if(voxel_know(thisv))//已知,又已经在frontier中了
+    {   if(frontier_set.find(thisv))
+        check_set.push_back(thisv);
+    }//这个v需要检验
+    else
+    {   
+        new_node_set.push_back(thisv);//新        
+    }
+}
+//fit_plane_here;//先进行拟合平面
+for(i in new_node_set)
+{
+    frontier_set.push_back(i);
+}
+for(i in check_set)
+{
+    if(check_frontier(i))continue;
+    else
+     frontier_set.delete(i);   
+}
+
+bool check_frontier(voxel)
+{
+    center_inplane.x=voxel.x;
+    center_inplane.y=voxel.y;
+    center_inplane.z=voxel.plane(voxel.x,voxel.y);
+    point_Set=Get_eight_point_in_unknow(center_inplane);以点为中心30度最大边长正方形边上8个点.
+    for(p in point_Set)
+    {
+        if(p in unknow)
+        {
+            return true;
+        }
+    }//bug:如果地上有一个坑,那么在不对free进行标记的情况下,坑边缘的地区会被设定为unknow.应该如何处理?
+    return false;
+}
+//如果一个地方被标记为frontier_goal,一定范围内都不会再被标记
+//记录机器人的轨迹信息，如果frontier按理应该在轨迹中某个点的观测范围内，则不被选择。
+
+
+已知frontier_list
+所有新覆盖的节点，如果在平面延续的8个点中出现了frontier，放入check_list。
+如果出现了未知点，则将自己放入new_list
+
+check_list遍历，如果不符合条件，从frontier_list中删除。
+new_list加入frontier_list

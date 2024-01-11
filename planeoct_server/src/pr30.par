@@ -1,0 +1,5 @@
+PROBLEM_FILE = /home/r/Mysoftware/Paper_Expriment_Simulation/Wheel_uneven/src/planeoct_server/src/vp6.atsp
+GAIN23 = NO
+RUNS = 3
+TOUR_FILE = /home/r/Mysoftware/Paper_Expriment_Simulation/Wheel_uneven/src/planeoct_server/src/output.txt
+TRACE_LEVEL = 0

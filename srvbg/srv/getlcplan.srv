@@ -1,0 +1,13 @@
+bool local_map
+---
+int32 width
+int32 height
+float32 org_x
+float32 org_y
+float32 res
+float32 min_z
+float32 max_z
+float32[] map2d_data
+float32[] frontier_x
+float32[] frontier_y
+float32[] frontier_z

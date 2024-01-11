@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="planeoct_server" type="test1" name="test1" output="screen">
+	</node>
+</launch>

@@ -1,0 +1,17 @@
+Bspline_param:
+  opt_time: 15
+  opt_iter: 500
+  te: 1
+  smo_weight: 0.25
+  vor_weight: 0.05
+  cur_weight: 0.0
+  fro_weight: 0
+  obs_optthr: 0.5
+  gra_weight_sum: 1
+  observe_optdis: 0.5
+  obst_safe_dis: 0.5
+  car_control_dis_step: 0.05
+  car_cont_time_step: 0.1
+  relax_x: 0.00001
+  use_frontier: false
+  use_cut: false

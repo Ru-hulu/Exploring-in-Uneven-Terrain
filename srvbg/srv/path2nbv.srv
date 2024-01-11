@@ -1,0 +1,5 @@
+int32 askcmd
+---
+float32[]  pathx
+float32[]  pathy
+int32 lenth

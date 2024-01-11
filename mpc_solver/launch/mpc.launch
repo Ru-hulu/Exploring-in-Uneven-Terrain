@@ -1,0 +1,6 @@
+<launch>
+    <rosparam command="load" file="/home/r/Mysoftware/Paper_Expriment_Simulation/Wheel_uneven/src/mpc_solver/param/control_param.yaml" />
+	<node pkg="mpc_solver" type="mpc_control_node" name="mpc_control_node" output="screen">
+	</node>
+	<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d /home/r/Mysoftware/Bsplinopt/src/bspline/para/default.rviz" required="true" /> -->
+</launch>
