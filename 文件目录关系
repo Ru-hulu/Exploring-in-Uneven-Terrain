@@ -1,3 +1,4 @@
 所有文件夹放置在catkin_ws/src中 
 在master版本中usm_sim文件夹解压到  catkin_ws/src文件夹中。
 lkh文件夹需要解压到catkin_ws/src中
+其他的txt文件统一都放在 catkin_wx/
