@@ -1,0 +1,16 @@
+2024-1-11日较为完善版本的探索代码，面向非平坦环境的轮式机器人探索任务。
+代码依赖Octomap,Eigen,pcl，在ROS-NOETIC环境下运行。
+代码编译：
+catkin_make --pkg srvbg
+catkin_make
+代码运行：
+sh start.sh.
+请在运行前保证debug_map.txt为空。
+在运行过程中，若想要保存某个状态下的地图信息，从这个状态下重新开始探索任务(主要是方便debug)
+可以执行 rosservice call /savedebug "data: false"
+这样在下一次运行时，debug_map.txt将会被自动读取。
+若需要存储地图信息并进行可视化，在探索进行过程中执行
+rosservice call /save2txt "data: false" 
+地图数据将被存储到mapdata.txt中。
+直接运行rosrun show_data show_data_node
+即可实现地图数据rviz可视化
